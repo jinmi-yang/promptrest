@@ -1,5 +1,13 @@
 [
   {
+    "id": "umqf9x5c0",
+    "title": "핀터레스트 걸 무드",
+    "prompt": "{\n  \"title\": \"Street Style Mirror-Selfie Edit\",\n  \"style\": \"fashion editorial, candid street photography, indie aesthetic, Pinterest collage\",\n  \"subject\": {\n    \"gender\": \"female\",\n    \"appearance\": \"incredibly beautiful young woman with long hair, soft glam makeup, confident expression\",\n    \"outfit\": {\n      \"top\": \"white fitted tank top\",\n      \"bottom\": \"black fitted shorts\",\n      \"accessories\": [\n\"a ruby necklace\" \n        \"oversized amber-tinted sunglasses\",\n        \"brown vintage cap\",\n        \"silver hoop earrings\",\n        \"small black shoulder bag\"\n      ]\n    }\n  },\n  \"scene\": {\n    \"location\": \"urban street with cobblestone pavement and reflective glass buildings\",\n    \"lighting\": \"natural daylight, soft cloudy ambiance\",\n    \"camera_style\": [\n      \"mirror selfie\",\n      \"high-angle selfie\",\n      \"close-up selfie\",\n      \"editorial street pose\"\n    ],\n    \"poses\": [\n      \"standing in front of reflective glass taking mirror selfie\",\n      \"looking up at camera with doing peace sign and tongue out expression\", \n      \"holding iced coffee while taking selfie from above\",\n      \"casual relaxed street stance with attitude\"\n    ]\n  },\n  \"composition\": {\n    \"layout\": \"4-image collage inspired by Pinterest fashion moodboards\",\n    \"details\": [\n      \"music player overlay in center\",\n      \"grainy film texture\",\n      \"slightly desaturated tones\",\n      \"street fashion aesthetic\",\n      \"editorial crop framing\"\n    ]\n  },\n  \"music_overlay\": {\n    \"song\": \"Let It Happen\",\n    \"artist\": \"Tame Impala\",\n    \"track_length\": \"7:48\",\n    \"current_timestamp\": \"0:39\",\n    \"player_style\": \"iPhone music player widget overlay\"\n  },\n  \"mood\": [\n    \"cool\",\n    \"effortless\",\n    \"dreamy\",\n    \"indie\",\n    \"fashion-forward\"\n  ],\n  \"quality\": {\n    \"resolution\": \"high detail\",\n    \"render_style\": \"photorealistic\",\n    \"aspect_ratio\": \"4:5\"\n  }\n}",
+    "image": "images/umqf9x5c0.jpg",
+    "ratio": "4:5",
+    "category": "product"
+  },
+  {
     "id": "pg1",
     "title": "Cinematic Urban Portrait: Stillness Amidst Motion",
     "prompt": "Cinematic overhead shot of me standing still a brick city sidesalk, wearing a dark oversized blazer, motion-blurred crowd rushes past around me moody lighng 35mm film look Shallow depth of field, sharp focus on me.",
