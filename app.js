@@ -9,7 +9,7 @@
 
   /* ===== CONFIG (optional defaults; you can also type these in the Connect panel) ===== */
   const CONFIG = {
-    GITHUB: { owner: "", repo: "", branch: "" }, // e.g. owner:"jinmi-yang", repo:"promptrest", branch:"main"
+    GITHUB: { owner: "jinmi-yang", repo: "promptrest", branch: "main" }, // e.g. owner:"jinmi-yang", repo:"promptrest", branch:"main"
     CONTACT_EMAIL: "jinmiyangplus@gmail.com",
     BUILD: "20260615-1242",
   };
