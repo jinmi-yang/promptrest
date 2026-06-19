@@ -780,3 +780,101 @@ img{display:block;max-width:100%;}
 /* similar pins — image only, height set by JS to match masonry rows */
 .pin-sim .sim-pin{position:relative;width:100%;border-radius:16px;overflow:hidden;cursor:zoom-in;background:var(--line-2);}
 .pin-sim .sim-pin>img,.pin-sim .sim-pin>.ph{width:100%;height:100%;object-fit:cover;display:block;}
+
+/* ============================================================
+   v16: homepage hero — image → prompt generator
+   ============================================================ */
+.gen-hero{border:1px solid var(--line);border-radius:20px;background:
+   linear-gradient(180deg, color-mix(in srgb, var(--accent) 7%, #fff), #fff);
+   padding:18px 20px;margin:4px 0 26px;box-shadow:0 8px 30px rgba(20,40,25,.05);}
+.gen-head{display:flex;align-items:center;gap:10px;margin-bottom:14px;}
+.gen-head h2{font-family:'Space Grotesk',sans-serif;font-size:18px;font-weight:700;letter-spacing:-.02em;margin:0;display:flex;align-items:center;gap:7px;}
+.gen-badge{font-size:10px;font-weight:800;letter-spacing:.08em;color:#fff;background:var(--brand-grad);padding:3px 8px;border-radius:20px;}
+.gen-body{display:grid;grid-template-columns:minmax(0,260px) minmax(0,1fr);gap:18px;align-items:stretch;}
+@media (max-width:680px){ .gen-body{grid-template-columns:1fr;} }
+
+.gen-drop{display:flex;flex-direction:column;align-items:center;justify-content:center;gap:8px;
+   min-height:150px;border:2px dashed color-mix(in srgb,var(--accent) 35%,var(--line));border-radius:16px;
+   background:#fff;cursor:pointer;transition:border-color .15s,background .15s;text-align:center;padding:14px;}
+.gen-drop:hover{border-color:var(--accent);background:color-mix(in srgb,var(--accent) 5%,#fff);}
+.gen-drop .dz-ic{color:var(--accent);}
+.gen-drop .dz-pill{font-size:13px;font-weight:700;color:var(--ink-2);}
+.gen-prev{position:relative;border-radius:16px;overflow:hidden;min-height:150px;background:var(--line-2);}
+.gen-prev img{width:100%;height:100%;max-height:300px;object-fit:cover;display:block;}
+.gen-prev .dz-clear{position:absolute;top:8px;right:8px;width:28px;height:28px;border-radius:50%;border:none;cursor:pointer;background:rgba(20,16,30,.6);color:#fff;font-size:16px;line-height:1;}
+
+.gen-right{display:flex;}
+.gen-state{flex:1;display:flex;align-items:center;justify-content:center;text-align:center;border-radius:14px;padding:18px;font-size:13.5px;font-weight:600;}
+.gen-hint{color:var(--ink-3);background:color-mix(in srgb,var(--accent) 4%,#fff);}
+.gen-err{color:#b23b3b;background:#fdf1f1;}
+.gen-busy{color:var(--accent);gap:10px;}
+.gen-spin{width:16px;height:16px;border:2px solid color-mix(in srgb,var(--accent) 30%,#fff);border-top-color:var(--accent);border-radius:50%;display:inline-block;animation:genspin .7s linear infinite;}
+@keyframes genspin{to{transform:rotate(360deg);}}
+.gen-out{flex:1;display:flex;flex-direction:column;background:var(--accent-soft,#eef7f1);border-radius:14px;padding:14px 16px;min-width:0;}
+.gen-out-lbl{font-size:10.5px;font-weight:800;letter-spacing:.06em;color:var(--accent);text-transform:uppercase;margin-bottom:6px;}
+.gen-out-txt{flex:1;font-size:13.5px;line-height:1.6;color:var(--ink);white-space:pre-wrap;max-height:200px;overflow-y:auto;margin-bottom:12px;}
+.gen-out-row{display:flex;gap:8px;align-items:center;}
+.gen-out-row .copy{display:inline-flex;align-items:center;gap:7px;background:var(--brand-grad);color:#fff;border:none;border-radius:12px;padding:9px 16px;font-weight:700;font-size:13px;cursor:pointer;font-family:inherit;}
+
+/* ============================================================
+   v17: taller hero (~half screen) + 1:1 upload/result columns
+   ============================================================ */
+.gen-body{grid-template-columns:1fr 1fr;align-items:stretch;}
+.gen-drop,.gen-prev,.gen-right{min-height:270px;}
+.gen-drop{gap:12px;}
+.gen-drop .dz-ic{transform:scale(1.4);}
+.gen-drop .dz-pill{font-size:14px;}
+.gen-prev{background:var(--line-2);}
+.gen-prev img{max-height:none;height:100%;object-fit:contain;}
+.gen-out-txt{max-height:none;font-size:14px;}
+.gen-state{font-size:14px;}
+@media (max-width:680px){
+  .gen-body{grid-template-columns:1fr;}
+  .gen-drop,.gen-prev,.gen-right{min-height:200px;}
+}
+
+/* ============================================================
+   v18: fixed 270 boxes (image fits inside) + always-on result card
+   ============================================================ */
+.gen-drop,.gen-prev,.gen-right{height:270px;min-height:0;}
+.gen-drop{gap:22px;}
+.gen-prev{overflow:hidden;}
+.gen-prev img{width:100%;height:100%;object-fit:contain;}
+
+/* right column = result card, fills the fixed height */
+.gen-right .gen-out{flex:1;min-height:0;}
+.gen-out-txt{max-height:none;flex:1;min-height:0;}
+.gen-out-txt.gen-txt-ph{color:var(--ink-faint);}
+.gen-out-txt.gen-txt-busy{color:var(--accent);display:flex;align-items:center;gap:8px;font-weight:600;}
+.gen-out-txt.gen-txt-err{color:#b23b3b;}
+
+/* buttons visible from the start, disabled until a prompt exists */
+.gen-out-row{position:relative;}
+.gen-out-row .openin{display:inline-flex;align-items:center;gap:6px;background:#fff;border:1px solid var(--line);border-radius:12px;padding:9px 14px;font-weight:700;font-size:13px;cursor:pointer;font-family:inherit;color:var(--ink);}
+.gen-out-row .copy[disabled],.gen-out-row .openin[disabled]{opacity:.4;cursor:not-allowed;pointer-events:none;}
+.gen-tools{position:absolute;bottom:calc(100% + 8px);left:0;min-width:200px;z-index:6;}
+
+@media (max-width:680px){
+  .gen-drop,.gen-prev{height:220px;}
+  .gen-right{height:auto;min-height:220px;}
+}
+
+/* ============================================================
+   v19: bottom-right actions + arrow between columns + inner prompt box
+   ============================================================ */
+.gen-body{grid-template-columns:1fr auto 1fr;}
+.gen-arrow{display:flex;align-items:center;justify-content:center;color:var(--accent);padding:0 2px;}
+.gen-arrow svg{width:30px;height:30px;}
+
+/* inner box that holds the prompt / placeholder */
+.gen-out-box{flex:1;min-height:0;overflow-y:auto;background:#fff;border:1px solid var(--line);border-radius:12px;padding:13px 15px;margin-bottom:14px;}
+.gen-out-txt{flex:none;max-height:none;}
+
+/* actions pinned bottom-right */
+.gen-out-row{justify-content:flex-end;margin-top:auto;}
+.gen-tools{left:auto;right:0;}
+
+@media (max-width:680px){
+  .gen-body{grid-template-columns:1fr;}
+  .gen-arrow{transform:rotate(90deg);height:32px;}
+}

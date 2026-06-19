@@ -1,0 +1,352 @@
+[
+  {
+    "id": "pg1",
+    "title": "Cinematic Urban Portrait: Stillness Amidst Motion",
+    "titleKo": "영화적 도시 인물: 멈춤 속의 움직임",
+    "prompt": "Cinematic overhead shot of me standing still a brick city sidesalk, wearing a dark oversized blazer, motion-blurred crowd rushes past around me moody lighng 35mm film look Shallow depth of field, sharp focus on me.",
+    "image": "images/after-image/pg4.jpg",
+    "before": "images/before-image/original_image1.png",
+    "ratio": "859:1280",
+    "category": "portrait"
+  },
+  {
+    "id": "pg2",
+    "title": "Make a 3x3 grid of different hairstyles Prompt",
+    "titleKo": "다양한 헤어스타일 3x3 그리드",
+    "prompt": "Make a 3x3 grid of different hairstyles",
+    "image": "images/after-image/pg2.jpg",
+    "before": "images/before-image/original_image1.png",
+    "ratio": "859:1280",
+    "category": "fashion"
+  },
+  {
+    "id": "pg3",
+    "title": "Pinterest Girl Aesthetic. How to Create Your Own Music Player Photo Collage",
+    "titleKo": "핀터레스트 걸 무드: 뮤직 플레이어 포토 콜라주",
+    "prompt": "{\n  \"title\": \"Street Style Mirror-Selfie Edit\",\n  \"style\": \"fashion editorial, candid street photography, indie aesthetic, Pinterest collage\",\n  \"subject\": {\n    \"gender\": \"female\",\n    \"appearance\": \"incredibly beautiful young woman with long hair, soft glam makeup, confident expression\",\n    \"outfit\": {\n      \"top\": \"white fitted tank top\",\n      \"bottom\": \"black fitted shorts\",\n      \"accessories\": [\n\"a ruby necklace\" \n        \"oversized amber-tinted sunglasses\",\n        \"brown vintage cap\",\n        \"silver hoop earrings\",\n        \"small black shoulder bag\"\n      ]\n    }\n  },\n  \"scene\": {\n    \"location\": \"urban street with cobblestone pavement and reflective glass buildings\",\n    \"lighting\": \"natural daylight, soft cloudy ambiance\",\n    \"camera_style\": [\n      \"mirror selfie\",\n      \"high-angle selfie\",\n      \"close-up selfie\",\n      \"editorial street pose\"\n    ],\n    \"poses\": [\n      \"standing in front of reflective glass taking mirror selfie\",\n      \"looking up at camera with doing peace sign and tongue out expression\", \n      \"holding iced coffee while taking selfie from above\",\n      \"casual relaxed street stance with attitude\"\n    ]\n  },\n  \"composition\": {\n    \"layout\": \"4-image collage inspired by Pinterest fashion moodboards\",\n    \"details\": [\n      \"music player overlay in center\",\n      \"grainy film texture\",\n      \"slightly desaturated tones\",\n      \"street fashion aesthetic\",\n      \"editorial crop framing\"\n    ]\n  },\n  \"music_overlay\": {\n    \"song\": \"Let It Happen\",\n    \"artist\": \"Tame Impala\",\n    \"track_length\": \"7:48\",\n    \"current_timestamp\": \"0:39\",\n    \"player_style\": \"iPhone music player widget overlay\"\n  },\n  \"mood\": [\n    \"cool\",\n    \"effortless\",\n    \"dreamy\",\n    \"indie\",\n    \"fashion-forward\"\n  ],\n  \"quality\": {\n    \"resolution\": \"high detail\",\n    \"render_style\": \"photorealistic\",\n    \"aspect_ratio\": \"4:5\"\n  }\n}",
+    "image": "images/after-image/pg3.jpg",
+    "before": "images/before-image/original_image1.png",
+    "ratio": "859:1280",
+    "category": "product"
+  },
+  {
+    "id": "pg4",
+    "title": "Cinematic Urban Portrait: Stillness Amidst Motion",
+    "titleKo": "영화적 도시 인물: 멈춤 속의 움직임",
+    "prompt": "Cinematic overhead shot of me standing still a brick city sidesalk, wearing a dark oversized blazer, motion-blurred crowd rushes past around me moody lighng 35mm film look Shallow depth of field, sharp focus on me.",
+    "image": "images/after-image/pg4.jpg",
+    "before": "images/before-image/original_image1.png",
+    "ratio": "859:1280",
+    "category": "portrait"
+  },
+  {
+    "id": "pg5",
+    "title": "Who are your celebrity doppelgangers? Prompt",
+    "prompt": "Role: Act as a senior facial recognition analyst and casting director.\nInput: Analyze the attached photo of the person.\nTask 1: Deep Feature Extraction\nScan the user's face for distinct biometric markers. Analyze:\nBone Structure: Cheekbone height, jaw width, and facial symmetry.\nFeatures: Eye shape/tilt, nose bridge/tip, and lip morphology.\nExpression & Vibe: The \"energy\" of the face (e.g., intense, friendly, stoic).\nTask 2: Triangulate Matches\nIdentify the Top 3 celebrity matches from your dataset.\nMatch A: The closest overall structural/biometric match.\nMatch B: A strong match based on specific standout features (e.g., identical eyes or jaw).\nMatch C: A \"mood\" or stylistic match (similar vibe or grooming style).\nTask 3: Calculate Likeness Scores\nAssign a percentage match (0-100%) to each of the three celebrities based on feature correlation.\nTask 4: Generate 4-Panel Output\nCreate a single composite image with a 2x2 Grid Layout titled \"TOP CELEBRITY MATCHES\".\nLayout Instructions:\nTop Left (Panel 1): The Original User Image (Input). Label: \"ORIGINAL\".\nTop Right (Panel 2): Celebrity Match A. Label: \"[Name] - [XX]%\".\nBottom Left (Panel 3): Celebrity Match B. Label: \"[Name] - [XX]%\".\nBottom Right (Panel 4): Celebrity Match C. Label: \"[Name] - [XX]%\".\nEnsure the celebrity images are high-quality headshots that match the angle of the user's photo as closely as possible for an accurate comparison.",
+    "image": "images/after-image/pg131.jpg",
+    "before": "images/before-image/b87795b4c.jpg",
+    "ratio": "2:3",
+    "category": "portrait",
+    "titleKo": "나의 셀럽 도플갱어는?"
+  },
+  {
+    "id": "pg6",
+    "title": "Street Photography",
+    "titleKo": "스트리트 포토그래피",
+    "prompt": "Use the person in the photo and create a dynamic over-the-shoulder selfie of the like Subway Surfers protagonist mid-run—red cap, hoodie and sneakers rendered with realistic textures yet cartoonish proportions—set on three graffiti-covered tracks in vibrant sunlight, with motion-blurred grumpy police officer and dog giving chase in a lively, kinetic scene.aaa",
+    "image": "images/after-image/pg6.jpg",
+    "before": "images/before-image/original_image1.png",
+    "ratio": "859:1280",
+    "category": "portrait"
+  },
+  {
+    "id": "pg7",
+    "title": "Digital Artwork",
+    "titleKo": "디지털 아트워크",
+    "prompt": "Generate a vertical 9 : 16 semi-realistic cartoon 3D scene with soft cinematic lighting where a customized main character [appearance details] pulls a funny face while snapping a selfie with Goku, Sonic, Naruto, and Super Mario in a small, well-lit living room with light tones and modern décor (sofa, plants, wall art), all striking humorous behind-the-scenes poses.",
+    "image": "images/after-image/pg7.jpg",
+    "before": "images/before-image/original_image1.png",
+    "ratio": "859:1280",
+    "category": "portrait"
+  },
+  {
+    "id": "pg8",
+    "title": "Christmas Prompt",
+    "titleKo": "크리스마스",
+    "prompt": "Using my reference image. DO NOT CHANGE THE FACE — keep all facial features exactly the same. Create a highly detailed, festive nighttime scene at a Disney theme park during Christmas season. A young woman stands in the foreground, centered in the frame. She wears red fluffy earmuffs, a green fuzzy jacket embroidered with multiple smiling Mickey Mouse faces, a black crop top revealing a subtle navel piercing, high-waisted light blue jeans with a black belt, and carries a small red crossbody purse with gold hardware. In her left hand, she holds a plush Minnie Mouse doll dressed in a red Santa outfit with white trim and a green scarf, while making a playful peace sign near her face and puckering her lips in a cute kiss pose. A delicate gold necklace with a small pendant adorns her neck.\n\nThe shot is an eye-level, straight-on medium portrait from the waist up, captured with a Fujifilm professional camera, using shallow depth of field to keep her in perfect focus while softly blurring the background. Behind her, a classic green lamppost wrapped in Christmas garland, twinkling warm white lights, red ribbons, gold ornaments, and red baubles decorates the scene. To the right, a glowing carousel with a white canopy and colorful string lights illuminates the festive night. The ground is paved brick, and distant bokeh lights from park attractions create a magical atmosphere.\n\nThe overall mood is joyful, whimsical, and full of holiday spirit — vibrant colors, warm golden lighting, cinematic composition, photorealistic style, and 8K ultra-HD quality.",
+    "image": "images/after-image/pg8.jpg",
+    "before": "images/before-image/original_image1.png",
+    "ratio": "859:1280",
+    "category": "portrait"
+  },
+  {
+    "id": "pg9",
+    "title": "Black and white portrait prompt",
+    "titleKo": "흑백 인물",
+    "prompt": "A high resolution black and white\nportrait of a girl wearing a sharp black\nturtle neck and chic small gold earrings\nalong with Korean bun.She stands\nconfidently in minimal studio setting\nslightly to the side dramatic studio\nlighting creates bold geometric\nshadows on her face and background\nstrong cross beams of light.Cut through\nthe shadows her expression is calm\nintrospective and slightly distant the\nimage has cinematic",
+    "image": "images/after-image/pg9.jpg",
+    "before": "images/before-image/original_image1.png",
+    "ratio": "859:1280",
+    "category": "portrait"
+  },
+  {
+    "id": "pg10",
+    "title": "Portrait in Amsterdam cafe photo prompt",
+    "titleKo": "암스테르담 카페 인물",
+    "prompt": "Portrait in Amsterdam cafe, photo taken on Agfa Vista 400 35mm colour film --ar 3:2 --seed 3326199454 --exp 20 --raw --s 90 --v 7",
+    "image": "images/after-image/pg10.jpg",
+    "before": "images/before-image/original_image1.png",
+    "ratio": "859:1280",
+    "category": "portrait"
+  },
+  {
+    "id": "pg11",
+    "title": "Blow a Kiss & Wink: Fun 2x2 Grid Selfie with Christmas Decor",
+    "titleKo": "윙크 & 키스: 크리스마스 2x2 셀피 그리드",
+    "prompt": "{\n  \"image_description\": {\n    \"format\": \"2x2 grid collage\",\n    \"subject\": {\n      \"gender\": \"Female\",\n      \"hair\": {\n        \"color\": \"Dark brown\",\n        \"style\": \"Long, loose waves, voluminous, side-parted\",\n        \"texture\": \"Silky, shiny\"\n      },\n      \"skin_tone\": \"Tan/Bronzed\",\n      \"makeup\": {\n        \"style\": \"Full glam\",\n        \"eyes\": \"Dark eyeliner, voluminous lashes, defined eyebrows\",\n        \"cheeks\": \"Rosy blush, contoured cheekbones, highlighter on nose and cheeks\",\n        \"lips\": \"Nude/mauve shade, glossy finish, lined\"\n      }\n    },\n    \"attire\": {\n      \"garment\": \"Strapless top or dress\",\n      \"color\": \"Bright red\",\n      \"texture\": \"Sequined, glittering, sparkly\",\n      \"accessories\": \"Large gold hoop earrings\"\n    },\n    \"setting\": {\n      \"location\": \"Narrow indoor hallway\",\n      \"background_elements\": [\n        \"Beige/gold floral patterned wallpaper\",\n        \"White door frames and crown molding\",\n        \" blurred Christmas garland/decorations visible in background\"\n      ],\n      \"lighting\": \"Warm, soft, flattering front lighting (likely flash or ring light) casting a glow on the skin\"\n    },\n    \"panel_details\": {\n      \"top_left\": {\n        \"expression\": \"Winking left eye, broad smile showing white teeth\",\n        \"pose\": \"Head slightly tilted, facing forward\"\n      },\n      \"top_right\": {\n        \"expression\": \"Blowing a kiss, lips puckered, eyes open\",\n        \"pose\": \"Right hand raised near mouth, palm facing camera\"\n      },\n      \"bottom_left\": {\n        \"expression\": \"Pouting ('duck face'), lips pushed forward\",\n        \"pose\": \"Facing directly forward, neutral gaze\"\n      },\n      \"bottom_right\": {\n        \"expression\": \"Subtle smirk/soft smile, confident look\",\n        \"pose\": \"Facing directly forward, direct eye contact\"\n      }\n    }\n  }\n}",
+    "image": "images/after-image/pg11.jpg",
+    "before": "images/before-image/original_image1.png",
+    "ratio": "859:1280",
+    "category": "portrait"
+  },
+  {
+    "id": "pg12",
+    "title": "Pinterest Girl Aesthetic. How to Create Your Own Music Player Photo Collage",
+    "titleKo": "핀터레스트 걸 무드: 뮤직 플레이어 포토 콜라주",
+    "prompt": "{\n  \"title\": \"Street Style Mirror-Selfie Edit\",\n  \"style\": \"fashion editorial, candid street photography, indie aesthetic, Pinterest collage\",\n  \"subject\": {\n    \"gender\": \"female\",\n    \"appearance\": \"incredibly beautiful young woman with long hair, soft glam makeup, confident expression\",\n    \"outfit\": {\n      \"top\": \"white fitted tank top\",\n      \"bottom\": \"black fitted shorts\",\n      \"accessories\": [\n\"a ruby necklace\" \n        \"oversized amber-tinted sunglasses\",\n        \"brown vintage cap\",\n        \"silver hoop earrings\",\n        \"small black shoulder bag\"\n      ]\n    }\n  },\n  \"scene\": {\n    \"location\": \"urban street with cobblestone pavement and reflective glass buildings\",\n    \"lighting\": \"natural daylight, soft cloudy ambiance\",\n    \"camera_style\": [\n      \"mirror selfie\",\n      \"high-angle selfie\",\n      \"close-up selfie\",\n      \"editorial street pose\"\n    ],\n    \"poses\": [\n      \"standing in front of reflective glass taking mirror selfie\",\n      \"looking up at camera with doing peace sign and tongue out expression\", \n      \"holding iced coffee while taking selfie from above\",\n      \"casual relaxed street stance with attitude\"\n    ]\n  },\n  \"composition\": {\n    \"layout\": \"4-image collage inspired by Pinterest fashion moodboards\",\n    \"details\": [\n      \"music player overlay in center\",\n      \"grainy film texture\",\n      \"slightly desaturated tones\",\n      \"street fashion aesthetic\",\n      \"editorial crop framing\"\n    ]\n  },\n  \"music_overlay\": {\n    \"song\": \"Let It Happen\",\n    \"artist\": \"Tame Impala\",\n    \"track_length\": \"7:48\",\n    \"current_timestamp\": \"0:39\",\n    \"player_style\": \"iPhone music player widget overlay\"\n  },\n  \"mood\": [\n    \"cool\",\n    \"effortless\",\n    \"dreamy\",\n    \"indie\",\n    \"fashion-forward\"\n  ],\n  \"quality\": {\n    \"resolution\": \"high detail\",\n    \"render_style\": \"photorealistic\",\n    \"aspect_ratio\": \"4:5\"\n  }\n}",
+    "image": "images/after-image/pg12.jpg",
+    "before": "images/before-image/original_image1.png",
+    "ratio": "859:1280",
+    "category": "product"
+  },
+  {
+    "id": "pg13",
+    "title": "Gym Photo",
+    "titleKo": "짐 포토",
+    "prompt": "Edit the gym photo to match the lighting, muscle tone, and sharpness of the provided reference (David Laid), keeping the original face and posture while subtly enhancing triceps, shoulders, and chest definition with high-contrast lighting, clean slightly tanned skin tone, blurred background gym equipment, and a bold, motivational mood.",
+    "image": "images/after-image/pg13.jpg",
+    "before": "images/before-image/original_image1.png",
+    "ratio": "859:1280",
+    "category": "portrait"
+  },
+  {
+    "id": "pg14",
+    "title": "Black & White Fashion Contact Sheet Playful Poses in a 3x3 Grid",
+    "titleKo": "흑백 패션 컨택트 시트 3x3 그리드",
+    "prompt": "{\n  \"Objective\": \"Recreate a 3x3 grid black-and-white fashion storyboard with a different subject and stylized playful posing.\",\n  \"Format\": {\n    \"Aspect Ratio\": \"1:1 square collage\",\n    \"Grid\": {\n      \"Rows\": 3,\n      \"Columns\": 3,\n      \"Total Frames\": 9,\n      \"Spacing\": \"Thin black dividers between frames\",\n      \"Margins\": \"Minimal clean border\"\n    }\n  },\n  \"Reference Style\": {\n    \"Image Type\": \"Studio fashion contact sheet\",\n    \"Color\": \"Black and white\",\n    \"Background\": \"Plain studio backdrop\",\n    \"Lighting\": \"Soft, even studio lighting with subtle shadows\",\n    \"Camera\": \"Fixed framing, mid-shot to full-body variations\"\n  },\n  \"Persona Details\": {\n    \"Character\": \"woman\",\n    \"Appearance\": \"Extremely cute and beautiful, soft facial features\",\n    \"Wardrobe\": \"Cute Pikachu-themed tank top and casual shorts\",\n    \"Vibe\": \"Playful, flirty, expressive\"\n  },\n  \"Poses per Frame\": [\n    { \"Frame\": 1, \"Pose\": \"Standing, hands in hair, playful expression\" },\n    { \"Frame\": 2, \"Pose\": \"Relaxed stance, slight hip tilt, soft smile\" },\n    { \"Frame\": 3, \"Pose\": \"Seated, knees pulled in, looking over shoulder\" },\n    { \"Frame\": 4, \"Pose\": \"Side profile, looking back toward camera\" },\n    { \"Frame\": 5, \"Pose\": \"Front-facing, finger near lips, teasing expression\" },\n    { \"Frame\": 6, \"Pose\": \"Hands adjusting waistband, confident stance\" },\n    { \"Frame\": 7, \"Pose\": \"Turned back, looking over shoulder, hair flowing\" },\n    { \"Frame\": 8, \"Pose\": \"Seated sideways, relaxed candid look\" },\n    { \"Frame\": 9, \"Pose\": \"Standing straight, slight smirk, casual posture\" }\n  ],\n  \"Visual Style\": {\n    \"Tone\": \"High contrast monochrome\",\n    \"Texture\": \"Slight film grain for editorial feel\",\n    \"Aesthetic\": \"Fashion magazine contact sheet, minimal distractions\"\n  },\n  \"Response Format\": {\n    \"Type\": \"Image generation prompt\",\n    \"Output\": \"Single 3x3 black-and-white collage with 9 distinct poses\"\n  }\n}",
+    "image": "images/after-image/pg14.jpg",
+    "before": "images/before-image/original_image1.png",
+    "ratio": "859:1280",
+    "category": "fashion"
+  },
+  {
+    "id": "pg15",
+    "title": "Cinematic Black and White",
+    "titleKo": "영화적 흑백",
+    "prompt": "Create a high-resolution, cinematic black-and-white side portrait using my real unedited face from the original image, under a dramatic overhead spotlight in a dark studio with deep shadows, intense mood, lowered pants, confident pose, and a soft gradient background; vertical 9:16 format, DSLR-style professional detail.",
+    "image": "images/after-image/pg15.jpg",
+    "before": "images/before-image/original_image1.png",
+    "ratio": "859:1280",
+    "category": "portrait"
+  },
+  {
+    "id": "pg16",
+    "title": "Blue and Red Pill",
+    "titleKo": "블루 & 레드 필",
+    "prompt": "(uploaded face) sitting in the fabled red leather chair wearing his signature long leather frock and shades. he leans forward while stretching out his arms revealing a blue pill in the left hand and a red pill in the right. cinematic, eerie atmosphere, cyan and red tones, hyper realistic, dreamy mood. The choice is yours.\"",
+    "image": "images/after-image/pg16.jpg",
+    "before": "images/before-image/original_image1.png",
+    "ratio": "859:1280",
+    "category": "neon"
+  },
+  {
+    "id": "pg17",
+    "title": "Art Tango Black White",
+    "titleKo": "아트 탱고 흑백",
+    "prompt": "Make a man (uploaded one) walking down a street in Argentina wearing a tango suit, with the image in black and white.",
+    "image": "images/after-image/pg17.jpg",
+    "before": "images/before-image/original_image1.png",
+    "ratio": "859:1280",
+    "category": "portrait"
+  },
+  {
+    "id": "pg18",
+    "title": "Red Carpet Glamour Close-Up",
+    "titleKo": "레드카펫 글래머 클로즈업",
+    "prompt": "Create a glamorous fashion portrait of an elegant young woman at a red carpet event, wearing black rectangular sunglasses and gold chandelier earrings, standing confidently before a chaotic press background, with cinematic lighting, bokeh blur on cameras, and shallow depth of field for a detailed, editorial-style close-up shot using the uploaded image as the subject base.",
+    "image": "images/after-image/pg18.jpg",
+    "before": "images/before-image/original_image1.png",
+    "ratio": "859:1280",
+    "category": "fashion"
+  },
+  {
+    "id": "pg19",
+    "title": "Puppet Style Character prompt",
+    "titleKo": "퍼펫 스타일 캐릭터",
+    "prompt": "Transform this image into a lively puppet show scene featuring felt puppets on a vibrant, colorful stage. Emphasize soft felt textures, playful expressions, visible stitching, and handcrafted details. The background should be cheerful, with bright curtains and imaginative stage props. Maintain the original characters and composition, but reimagine everything in the whimsical style of a handmade felt puppet performance",
+    "image": "images/after-image/pg19.jpg",
+    "before": "images/before-image/original_image1.png",
+    "ratio": "859:1280",
+    "category": "anime"
+  },
+  {
+    "id": "pg20",
+    "title": "Cinematic AI Portrait with La Casa de Papel Mask",
+    "titleKo": "종이의 집 마스크 영화적 AI 인물",
+    "prompt": "Ultra-realistic cinematic close-up of the person in the reference image, holding a La Casa de Papel mask that covers half of their face, giving off a cool, action-hero vibe. They're wearing the iconic red jumpsuit from the La Casa de Papel series. Behind them, people are running in panic through a dimly lit street, with a moody cinematic atmosphere. The scene is shot on 35mm film with shallow depth of field and vibrant ultra-detailed colors. Sharp focus on the main person, with slightly blurred background movement.",
+    "image": "images/after-image/pg20.jpg",
+    "before": "images/before-image/original_image1.png",
+    "ratio": "859:1280",
+    "category": "portrait"
+  },
+  {
+    "id": "pg21",
+    "title": "Gym Photo AI Prompt – Cinematic Couple Fitness Portrait (ChatGPT - Nano Banana Gym Photo Editing)",
+    "titleKo": "영화적 커플 피트니스 인물 (짐 포토)",
+    "prompt": "Ultra-realistic gym portrait. Add a fit young woman posed as a girlfriend beside the subject, standing close with her face partially hidden by resting gently on his shoulder. Her body is slightly turned to the backside, arms softly placed on his shoulder in a natural, affectionate way. Her expression shows subtle shyness and a soft blush on her face. Both are in gym outfits, with realistic lighting and cinematic color grading to match a moody fitness photography style.",
+    "image": "images/after-image/pg21.jpg",
+    "before": "images/before-image/original_image1.png",
+    "ratio": "859:1280",
+    "category": "portrait"
+  },
+  {
+    "id": "pg22",
+    "title": "Mysterious Gaze: A Black and White Aesthetic",
+    "titleKo": "미스터리한 시선: 흑백 미학",
+    "prompt": "Prompt A black-and-white aesthetic portrait of a stylish person as in the image attached (use the image with accurate face 100%) standards on the wall with dramatic lighting. He is wearing an oversized dark coat, with messy, voluminous hair partially covering his face. His pose is emotional and introspective and confident. Shadow from a window fall across the wall behind him, creating a moody and artistic atmosphere. The overall vibes is mysterious, emotional.",
+    "image": "images/after-image/pg22.jpg",
+    "before": "images/before-image/original_image1.png",
+    "ratio": "859:1280",
+    "category": "portrait"
+  },
+  {
+    "id": "pg23",
+    "title": "Polaroid Style Candid Photo with White Curtain Background",
+    "titleKo": "흰 커튼 배경 폴라로이드 캔디드",
+    "prompt": "Make an image that looks like it was taken with a Polaroid camera. It should feel like an ordinary, candid photo with no prominent subject or props. Add a slight blur and keep a consistent light source, like a flash in a dark room, diffused across the entire frame. Do not alter the faces. Replace the background behind the two people with white curtains, with the guy putting his arm around the girl's shoulder.",
+    "image": "images/after-image/pg23.jpg",
+    "before": "images/before-image/original_image1.png",
+    "ratio": "859:1280",
+    "category": "fashion"
+  },
+  {
+    "id": "pg24",
+    "title": "Magazine Cover Design",
+    "titleKo": "매거진 커버 디자인",
+    "prompt": "Design a glossy magazine cover featuring this person as the star. Include a bold masthead, cover lines, and a glamorous studio photo style. Make it look like a real magazine you'd find on the newsstand.",
+    "image": "images/after-image/pg24.jpg",
+    "before": "images/before-image/original_image1.png",
+    "ratio": "859:1280",
+    "category": "fashion"
+  },
+  {
+    "id": "pg25",
+    "title": "Ghostface Ai Trend Prompt",
+    "titleKo": "고스트페이스 AI 트렌드",
+    "prompt": "Ultra-realistic cinematic photo of a young woman in a pink retro bedroom, sitting on a satin bed. She is holding a pink vintage corded phone with one hand while resting her other hand on the phone base. In front of her is a large glass bowl of popcorn and colorful magazines on the bed. The room is decorated with 90s and 2000s pop culture posters on pink walls, with a warm lamp glowing beside the bed.\n\nIn the doorway behind her, a figure wearing a black cloak and a white ‘Ghostface’ mask from Scream horror movies stands silently, creating a suspenseful atmosphere.\n\nThe lighting is moody, mixing cozy bedroom pink tones with a dark, eerie shadow in the doorway.\nThe main focus must remain on the girl, the phone, and the retro bedroom details, while the Ghostface character stays slightly blurred in the background, adding tension.\n\nAtmosphere: nostalgic, suspenseful, horror-meets-teen-drama.\nStyle: ultra-sharp, cinematic, professional editorial look.",
+    "image": "images/after-image/pg25.jpg",
+    "before": "images/before-image/original_image1.png",
+    "ratio": "859:1280",
+    "category": "neon"
+  },
+  {
+    "id": "pg26",
+    "title": "Ghost Face Photo Trend Gemini Prompt",
+    "titleKo": "고스트 페이스 포토 트렌드",
+    "prompt": "Create a photo of me in a dreamy y2k style portrait of me laying on a shiny pink satin bedding as i hold a large 90s style chorded phone and in a thoughtful daydreaming pose her long wavy hair gold butterfly clips on each side. she wears delicate jewelry including dainty gold necklaces and accessories and gold chunky rings. the room behind her is girly and daydreamy with 90s style posters. her makeup is simple yet glamorous with brown lipgloss and brown lip liner. the photo should have a grainy 90s style to it with a light source like a lamp in a dimly lit room at night. a bowl of popcorn rests beside her near some 90s style magazines. A guy with ghostface costume should be behind her staring at her, his body should be dimly lit, and he should be standing in the doorway of a dimly lit hallway. the background behind he should be slightly dark and ominous",
+    "image": "images/after-image/pg26.jpg",
+    "before": "images/before-image/original_image1.png",
+    "ratio": "859:1280",
+    "category": "neon"
+  },
+  {
+    "id": "pg27",
+    "title": "Hong Kong Retro Portrait in 1990s Film Style",
+    "titleKo": "1990년대 홍콩 레트로 인물",
+    "prompt": "Use the photo above as the reference. Create a photorealistic Hong Kong retro portrait with authentic 1990s film look, like a moody movie still. Strictly preserve identity (eyes shape, lips, nose bridge, jawline, skin tone). Vertical portrait, mid-thigh to head (3/4 body). Subject standing, leaning slightly toward camera with both hands resting on a small wooden cabinet behind her; shoulders relaxed. Chin slightly down, gaze up toward camera with a melancholic, calm expression. Scene: tight messy Hong Kong room, walls plastered edge-to-edge with yellowed Cantonese newspapers. Behind subject: hazy neon Chinese signage (red + cyan) glowing through mist near the ceiling.\nCluttered furniture: compact cabinet, scattered cables, small mirror edge visible. Wardrobe & Styling: cream/ ivory lace corset-style dress (tasteful, non-revealing), layered delicate gold necklaces, small hoop or pearl earrings. Hair tousled with wispy bangs across forehead.\nThe face must be a precise copy of my real facial features, do not change the face, and make it a high-resolution photo.",
+    "image": "images/after-image/pg27.jpg",
+    "before": "images/before-image/original_image1.png",
+    "ratio": "859:1280",
+    "category": "fashion"
+  },
+  {
+    "id": "pg28",
+    "title": "Twilight Reflections – The Artist and Her Canvas Prompt",
+    "titleKo": "황혼의 반영: 예술가와 캔버스",
+    "prompt": "Hyper-realistic eye-level half-body portrait of a young woman artist (age 26–30) painting her own portrait beside a large glass window at twilight. She wears a crisp white shirt with suspenders, leather wristbands, and has a visible forearm tattoo. Her hands and shirt are speckled with paint. The cozy art studio is filled with canvases and scattered art tools. Lighting blends moody twilight from outside with warm indoor glow, producing creamy bokeh and cinematic color grading. Sharp focus, 8K UHD detail. Use the provided reference image for composition and mood.",
+    "image": "images/after-image/pg28.jpg",
+    "before": "images/before-image/original_image1.png",
+    "ratio": "859:1280",
+    "category": "portrait"
+  },
+  {
+    "id": "pg29",
+    "title": "Looking at a photo on the wall Prompt",
+    "titleKo": "벽의 사진을 바라보며",
+    "prompt": "Create a scene in a modern art gallery using the attached image of the girl's face and appearance without changing her facial features. There is a large oil portrait of a girl on the wall. Her face and upper body are painted in a realistic, expressive oil painting style with textured brushstrokes and muted colors.\nThe clean red wall of the gallery creates a professional atmosphere of the exhibition thanks to the soft lighting illuminating the artwork.\nIn front of the painting, her man is sitting in a dark green armchair visible from behind. On the back of the armchair, there is a single, tiny, barely noticeable dot, like a speck of dust. He is holding a cigarette in his hand, from which a thin smoke rises, which gives the scene a cinematic and mysterious mood.",
+    "image": "images/after-image/pg29.jpg",
+    "before": "images/before-image/original_image1.png",
+    "ratio": "859:1280",
+    "category": "portrait"
+  },
+  {
+    "id": "pg30",
+    "title": "Red Background Trend Prompt",
+    "titleKo": "레드 배경 트렌드",
+    "prompt": "Create a Vertical portrait shot in 1080x1920 format, characterized by stark cinematic lighting and intense contrast. Captured with a slightly low, upward-facing angle that dramatizes the subject’s jawline and neck, the composition evokes quiet dominance and sculptural elegance. The background is a deep, saturated crimson red, creating a bold visual clash with the model’s luminous skin and dark wardrobe. Lighting is tigaily directional, casting warm golden highlights on one side of the face while plunging the other into velvety shadow, emphasizing bone structure with almost architectural precision. wearing smart black suit and black shirt. shooting haft top body.",
+    "image": "images/after-image/pg30.jpg",
+    "before": "images/before-image/original_image1.png",
+    "ratio": "859:1280",
+    "category": "portrait"
+  },
+  {
+    "id": "pg31",
+    "title": "Stillness in Motion Prompt",
+    "titleKo": "움직임 속의 정지",
+    "prompt": "Editorial-style portrait of [subject] in sharp focus with a\ncontemplative expression, standing still while a crowd blurs past in motion. Deep emerald curtain backdrop, warm ochre ground with subtle reflection. Sophisticated, cinematic vibe with moody lighting, rich dark tones, cool shadows, warm highlights, and soft vignette. Shot on 50-85mm, f/2.8-f/4, slow shutter for motion blur. Modern editorial with painterly\nquality.",
+    "image": "images/after-image/pg31.jpg",
+    "before": "images/before-image/original_image1.png",
+    "ratio": "859:1280",
+    "category": "portrait"
+  },
+  {
+    "id": "pg32",
+    "title": "Japanese Street Racing Aesthetic Prompt",
+    "titleKo": "일본 스트리트 레이싱 미학",
+    "prompt": "Ambiance Photorealistic style with typical city nighttime lighting. Dominant colors: neon blue, metallic red, and streetlights. Mysterious and urban atmosphere, Japanese street racing style. Main Subject is a handsome young man standing leaned against a sports car, face should look like the photo uploaded. Wearing sports inspire leather jacket, retro baggy pants and red puma shoes . Black backpack on his back, hands in his pockets. Glance lookina up at the camera (overhead angle). Vehicle (Sports Car) Red sports car with white stripes tupical of street racing. Design resembles a red Chevrolet Corvette Stingray 2025. full bodv kit. Modified stickers and Japanese writinc on the hood. The car's interior emits a blue glow from within. Environment Location at night on the side of the road, dark asphalt with white lines. Sidewalk with white tiles and white poles. City lights create a futuristic and dramatic feel. Light reflects off the car's surface, creating a cinematic effect Color & Lighting Nuances Dim lighting with blue and green neon effects. High contrast between the shiny car and the dark background. Reflections Street lights on the car body and wet asphalt photo size 3:4",
+    "image": "images/after-image/pg32.jpg",
+    "before": "images/before-image/original_image1.png",
+    "ratio": "859:1280",
+    "category": "portrait"
+  },
+  {
+    "id": "pg33",
+    "title": "Cinematic 4K Studio Portrait Prompt",
+    "titleKo": "영화적 4K 스튜디오 인물",
+    "prompt": "Edit my photo into a cinematic 4K studio portrait: captured from a high-angle top-down perspective, subject standing on a smooth gradient studio floor. Wearing modern casual outfit with glasses, posing naturally while looking slightly up at the camera. Soft professional studio lighting creates a minimalistic, clean, and stylish atmosphere. Ultra-detailed portrait, 4K resolution, professional editorial photoshoot style.",
+    "image": "images/after-image/pg33.jpg",
+    "before": "images/before-image/original_image1.png",
+    "ratio": "859:1280",
+    "category": "portrait"
+  },
+  {
+    "id": "pg34",
+    "title": "Haunted Picnic with Little Red Riding Hood and the Big Bad Wolf Prompt",
+    "titleKo": "빨간 망토와 늑대의 으스스한 피크닉",
+    "prompt": "Please make this edit without changing face and any tattoos if shown, The female model will be sitting down on a picnic blanket with a setup of food to eat, she will be sitting as if it was little red riding hood, the red cape hood is down and her long red wavy hair comes down past her shoulders as she looks into the camera, make up is subtle and red lipstick, one arm resting on a knee the other arm hanging over the picnic spread holding a handful of cherries, as the big bad wolf is sitting opposite side of her extending out mouth open to eat a cherry, he’s big and hairy. The surrounding setting is a haunted gloomy graveyard with a settle fog rolling in.",
+    "image": "images/after-image/pg34.jpg",
+    "before": "images/before-image/original_image1.png",
+    "ratio": "859:1280",
+    "category": "neon"
+  },
+  {
+    "id": "pg35",
+    "title": "Professional Studio Portrait: Smart Casual Prompt",
+    "titleKo": "프로페셔널 스튜디오 인물: 스마트 캐주얼",
+    "prompt": "A professional, high-resolution, profile photo, maintaining the exact facial structure, identity, and key features of the person in the input image. The subject is framed from the chest up, with ample headroom and negative space above their head, ensuring the top of their head is not cropped. The person looks directly at the camera, and the subject's body is also directly facing the camera. They are styled for a professional photo studio shoot, wearing a smart casual blazer. The background is a solid '# 141414' neutral studio. Shot from a high angle with bright and airy soft, diffused studio lighting, gently illuminating the face and creating a subtle catchlight in the eyes, conveying a sense of clarity. Captured on an 85mm f/1.8 lens with a shallow depth of field, exquisite focus on the eyes, and beautiful, soft bokeh. Observe crisp detail on the fabric texture of the blazer, individual strands of hair, and natural, realistic skin texture. The atmosphere exudes confidence, professionalism, and approachability. Clean and bright cinematic color grading with subtle warmth and balanced tones, ensuring a polished and contemporary feel.",
+    "image": "images/after-image/pg35.jpg",
+    "before": "images/before-image/original_image1.png",
+    "ratio": "859:1280",
+    "category": "portrait"
+  }
+]

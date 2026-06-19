@@ -9,9 +9,12 @@
 
   /* ===== CONFIG (optional defaults; you can also type these in the Connect panel) ===== */
   const CONFIG = {
-    GITHUB: { owner: "jinmi-yang", repo: "promptrest", branch: "main" }, // e.g. owner:"jinmi-yang", repo:"promptrest", branch:"main"
+    GITHUB: { owner: "", repo: "", branch: "" }, // e.g. owner:"jinmi-yang", repo:"promptrest", branch:"main"
     CONTACT_EMAIL: "jinmiyangplus@gmail.com",
-    BUILD: "20260615-1242",
+    BUILD: "20260616-1730",
+    // Image→prompt hero: true = everyone can use it (needs the api key + costs per call);
+    // false = only you (after ?admin=1), so visitors can't trigger API costs.
+    PUBLIC_GENERATOR: true,
   };
   try{ console.log("%cPromptrest build "+CONFIG.BUILD, "color:#10A0B6;font-weight:700"); }catch{}
 
@@ -47,6 +50,7 @@
       searchPh:"Search prompts, styles, transformations…", region:"Region & language",
       feedAll:"Fresh prompt edits", feedAllSub:"Real images, recreated from a single prompt. Tap any pin to grab it.",
       results:"results", prompt:"Prompt", copy:"Copy prompt", copied:"Copied!",
+      genTitle:"Image → Prompt", genSub:"Upload an image you’re curious about! I’ll give you a prompt that could create it :) !", genPick:"Choose or drop an image", genBusy:"Generating prompt…", genAgain:"Try another", genErr_notready:"Not ready yet (needs owner setup).", genErr_toobig:"Image is too large — please use a smaller one.", genErr_failed:"Couldn’t generate. Please try again in a moment.", genErr_limit:"Daily limit reached. Please try again tomorrow.",
       save:"Save", saved:"Saved", savedToast:"Saved", removedToast:"Removed",
       openIn:"Open in", copiedToast:"Prompt copied!",
       sentToast:t=>`Prompt sent to ${t}`, pasteToast:t=>`Prompt copied — paste into ${t}`,
@@ -90,6 +94,7 @@
       searchPh:"프롬프트, 스타일, 변환 검색…", region:"지역 및 언어",
       feedAll:"새로 올라온 프롬프트 편집", feedAllSub:"프롬프트 하나로 재현한 이미지들. 핀을 눌러 가져가세요.",
       results:"개의 결과", prompt:"프롬프트", copy:"프롬프트 복사", copied:"복사 완료!",
+      genTitle:"이미지로 프롬프트 만들기", genSub:"프롬프트를 알고 싶은 이미지를 업로드해 보세요 ! 그 이미지를 생성할 수 있는 프롬프트를 알려드릴게요 :) !", genPick:"이미지 선택 또는 끌어다 놓기", genBusy:"프롬프트 생성 중…", genAgain:"다른 이미지", genErr_notready:"아직 준비 중이에요 (운영자 설정 필요).", genErr_toobig:"이미지가 너무 커요 — 더 작은 이미지를 올려주세요.", genErr_failed:"생성에 실패했어요. 잠시 후 다시 시도해주세요.", genErr_limit:"오늘 사용 횟수를 다 썼어요. 내일 다시 시도해주세요.",
       save:"저장", saved:"저장됨", savedToast:"보드에 저장됨", removedToast:"저장 해제됨",
       openIn:"바로가기", copiedToast:"프롬프트 복사 완료!",
       sentToast:t=>`프롬프트를 ${t}에 넣었어요`, pasteToast:t=>`프롬프트 복사됨 — ${t}에 붙여넣기`,
@@ -141,6 +146,7 @@
     composer:false, busy:false, newTagOpen:false, newTagVal:"", fileWarn:false, info:null,
     draft: blankDraft(), _focusSearch:false,
     gh: { token:"", owner:"", repo:"", branch:"", connected:false, validating:false },
+    gen: { busy:false, preview:"", prompt:"", error:"", toolsOpen:false },
   };
   if (localStorage.getItem("pr_lang")) S.lang = localStorage.getItem("pr_lang");
 
@@ -252,20 +258,20 @@
     S.busy=true; render();
     const {owner,repo,branch,token}=S.gh; const base=`${GH_API}/repos/${owner}/${repo}/contents`;
     const id="u"+Date.now().toString(36);
-    const imgPath=`images/${id}.${extOf(d.afterData)}`;
+    const imgPath=`images/after-image/${id}.${extOf(d.afterData)}`;
     const pin={ id, title:d.title.trim(), prompt:d.prompt.trim(), image:imgPath, before:null, ratio:d.ratio||"4:5", category:d.category };
     try{
       await ghPut(base, imgPath, dataB64(d.afterData), `promptrest: image ${id}`, branch, token);
-      if(d.beforeData){ const bp=`images/${id}-before.${extOf(d.beforeData)}`; await ghPut(base, bp, dataB64(d.beforeData), `promptrest: before ${id}`, branch, token); pin.before=bp; }
+      if(d.beforeData){ const bp=`images/before-image/${id}.${extOf(d.beforeData)}`; await ghPut(base, bp, dataB64(d.beforeData), `promptrest: before ${id}`, branch, token); pin.before=bp; }
       // read current prompts.json (sha + content), prepend, write back
       let list=[], sha;
-      const cur=await fetch(`${base}/data/prompts.json?ref=${encodeURIComponent(branch)}`,{headers:ghHeaders(token)});
+      const cur=await fetch(`${base}/data/prompts1.json?ref=${encodeURIComponent(branch)}`,{headers:ghHeaders(token)});
       if(cur.ok){ const cj=await cur.json(); sha=cj.sha;
         try{ list = cj.content ? JSON.parse(b64ToUtf8(cj.content)) : JSON.parse(await fetch(cj.download_url).then(x=>x.text())); }catch{ list=[]; }
         if(!Array.isArray(list)) list=[];
       }
       list.unshift(pinClean(pin));
-      await ghPut(base, "data/prompts.json", utf8ToB64(JSON.stringify(list,null,2)), `promptrest: add pin ${id}`, branch, token, sha);
+      await ghPut(base, "data/prompts1.json", utf8ToB64(JSON.stringify(list,null,2)), `promptrest: add pin ${id}`, branch, token, sha);
       // show immediately in this browser (real image via data URL) until redeploy
       S.busy=false; S.seed.unshift({ ...pinClean(pin), _afterData:d.afterData, _beforeData:d.beforeData||null });
       S.composer=false; S.cat="all"; S.query=""; S.draft=blankDraft(); render(); toast(ki.publishedToast);
@@ -307,6 +313,53 @@
   }
 
   /* ===== feed ===== */
+  /* ===== image → prompt generator (homepage hero) ===== */
+  function renderHero(){
+    const ki=t(), g=S.gen;
+    const drop = g.preview
+      ? `<div class="gen-prev"><img src="${esc(g.preview)}" alt="preview"><button class="dz-clear" data-act="genreset" aria-label="reset">×</button></div>`
+      : `<label class="gen-drop"><span class="dz-ic">${I_UP}</span><span class="dz-pill">${esc(ki.genPick)}</span><input type="file" accept="image/*" data-file="genimg" hidden></label>`;
+    // the right side always looks like a result card; the text area shows the prompt,
+    // or the placeholder hint / a busy spinner / an error before a prompt exists.
+    let txt, cls;
+    if (g.busy){ txt=`<span class="gen-spin"></span> ${esc(ki.genBusy)}`; cls="gen-txt-busy"; }
+    else if (g.error){ txt=esc(ki["genErr_"+g.error]||ki.genErr_failed); cls="gen-txt-err"; }
+    else if (g.prompt){ txt=esc(g.prompt); cls=""; }
+    else { txt=esc(ki.genSub); cls="gen-txt-ph"; }
+    const ready=!!g.prompt, dis=ready?"":"disabled";
+    const toolsMenu = (ready && g.toolsOpen) ? `<div class="tools gen-tools">${TOOLS.map(tl=>`<button data-gentool="${tl.id}"><span class="ic" style="background:${tl.bg}">${tl.mark}</span><span style="flex:1">${esc(tl.name)}</span></button>`).join("")}</div>`:"";
+    const panel = `<div class="gen-out">
+        <div class="gen-out-lbl">${esc(ki.prompt)}</div>
+        <div class="gen-out-box"><div class="gen-out-txt ${cls}">${txt}</div></div>
+        <div class="gen-out-row">
+          <button class="copy" data-act="gencopy" ${dis}>${I_COPY("#fff")} <span>${esc(ki.copy)}</span></button>
+          <button class="openin" data-act="gentools" ${dis}>${esc(ki.openIn)} ${I_CHEV}</button>
+          ${toolsMenu}
+        </div>
+      </div>`;
+    return `<section class="gen-hero">
+      <div class="gen-head"><span class="gen-badge">BETA</span><h2>${I_SPARK} ${esc(ki.genTitle)}</h2></div>
+      <div class="gen-body"><div class="gen-left">${drop}</div><div class="gen-arrow">${I_ARR}</div><div class="gen-right">${panel}</div></div>
+    </section>`;
+  }
+  async function generatePrompt(dataUrl){
+    const capKey="pr_gen_"+new Date().toISOString().slice(0,10), CAP=8;
+    let n=parseInt(localStorage.getItem(capKey)||"0",10)||0;
+    if(n>=CAP){ S.gen.error="limit"; S.gen.busy=false; render(); return; }
+    S.gen.busy=true; S.gen.error=""; S.gen.prompt=""; render();
+    try{
+      const b64=dataB64(dataUrl); const mt=(dataUrl.match(/data:(image\/\w+)/)||[])[1]||"image/jpeg";
+      const r=await fetch("/api/generate-prompt",{method:"POST",headers:{"content-type":"application/json"},body:JSON.stringify({image:b64,mediaType:mt})});
+      if(r.status===501) S.gen.error="notready";
+      else if(r.status===413) S.gen.error="toobig";
+      else if(!r.ok) S.gen.error="failed";
+      else { const d=await r.json().catch(()=>({})); S.gen.prompt=(d.prompt||"").trim(); if(!S.gen.prompt) S.gen.error="failed"; }
+      if(!S.gen.error){ localStorage.setItem(capKey, String(n+1)); }
+      track("generate_prompt",{ok:!S.gen.error, error:S.gen.error||undefined});
+    }catch{ S.gen.error="failed"; }
+    S.gen.busy=false; render();
+  }
+
   function renderFeed(){
     const ki=t(), pins=visiblePins();
     let title, sub;
@@ -326,7 +379,8 @@
       }
     }
     else body=`<div class="grid">${pins.map(renderCard).join("")}</div>`;
-    return `<div class="feed-head"><h1>${title}</h1><p>${esc(sub)}</p></div>${body}`;
+    const hero = (S.cat==="all" && !S.query && (CONFIG.PUBLIC_GENERATOR || S.admin)) ? renderHero() : "";
+    return `${hero}<div class="feed-head"><h1>${title}</h1><p>${esc(sub)}</p></div>${body}`;
   }
   function renderCard(pin){
     const ki=t();
@@ -545,15 +599,16 @@
 
   /* ===== events ===== */
   document.addEventListener("click",(e)=>{
-    const el=e.target.closest("[data-act],[data-cat],[data-lang],[data-open],[data-save],[data-tool],[data-dcat],[data-clear],[data-info],[data-copy]");
+    const el=e.target.closest("[data-act],[data-cat],[data-lang],[data-open],[data-save],[data-tool],[data-gentool],[data-dcat],[data-clear],[data-info],[data-copy]");
     if(!el){ if(S.langOpen && !e.target.closest(".lang")){ S.langOpen=false; render(); } return; }
     if(el.dataset.info){ S.info=el.dataset.info; S.langOpen=false; render(); return; }
-    if(el.dataset.copy){ e.stopPropagation(); const pin=allPins().find(p=>p.id===el.dataset.copy); if(pin){ copyText(pin.prompt); track("copy_prompt",{id:pin.id,title:pin.title,where:"card"}); toast(t().copiedToast); } return; }
+    if(el.dataset.copy){ e.stopPropagation(); const pin=allPins().find(p=>p.id===el.dataset.copy); if(pin){ copyText(pin.prompt); track("copy_prompt",{id:pin.id,title:pin.title,category:pin.category,where:"card"}); toast(t().copiedToast); } return; }
     if(el.dataset.save){ e.stopPropagation(); const id=el.dataset.save; S.saved[id]=!S.saved[id]; save("pr_saved",S.saved); toast(S.saved[id]?t().savedToast:t().removedToast); render(); return; }
-    if(el.dataset.open){ S.active=el.dataset.open; S.toolsOpen=false; render(); window.scrollTo({top:0}); return; }
+    if(el.dataset.open){ const op=allPins().find(p=>p.id===el.dataset.open); if(op) track("open_pin",{id:op.id,title:op.title,category:op.category,from:S.active?"similar":"feed"}); S.active=el.dataset.open; S.toolsOpen=false; render(); window.scrollTo({top:0}); return; }
     if(el.dataset.cat){ S.cat=el.dataset.cat; S.active=null; S.query=""; S._focusSearch=false; window.scrollTo({top:0}); render(); return; }
     if(el.dataset.lang){ S.lang=el.dataset.lang; localStorage.setItem("pr_lang",S.lang); S.langOpen=false; render(); return; }
-    if(el.dataset.tool){ const tl=TOOLS.find(x=>x.id===el.dataset.tool); const pin=allPins().find(p=>p.id===S.active); if(tl&&pin){ copyText(pin.prompt); track("open_in",{tool:tl.id,id:pin.id}); window.open(tl.url(pin.prompt),"_blank"); S.toolsOpen=false; toast(tl.prefill?t().sentToast(tl.name):t().pasteToast(tl.name)); render(); } return; }
+    if(el.dataset.tool){ const tl=TOOLS.find(x=>x.id===el.dataset.tool); const pin=allPins().find(p=>p.id===S.active); if(tl&&pin){ copyText(pin.prompt); track("open_in",{tool:tl.id,platform:tl.name,id:pin.id,title:pin.title,category:pin.category}); window.open(tl.url(pin.prompt),"_blank"); S.toolsOpen=false; toast(tl.prefill?t().sentToast(tl.name):t().pasteToast(tl.name)); render(); } return; }
+    if(el.dataset.gentool){ const tl=TOOLS.find(x=>x.id===el.dataset.gentool); if(tl&&S.gen.prompt){ copyText(S.gen.prompt); track("open_in",{tool:tl.id,platform:tl.name,from:"generator"}); window.open(tl.url(S.gen.prompt),"_blank"); S.gen.toolsOpen=false; toast(tl.prefill?t().sentToast(tl.name):t().pasteToast(tl.name)); render(); } return; }
     if(el.dataset.dcat){ S.draft.category=el.dataset.dcat; render(); return; }
     if(el.dataset.clear){ e.preventDefault(); S.draft[el.dataset.clear+"Data"]=""; render(); return; }
 
@@ -562,8 +617,11 @@
     else if(a==="lang"){ S.langOpen=!S.langOpen; render(); }
     else if(a==="close"||a==="closebg"||a==="back"){ if(a==="closebg"&&e.target.closest(".modal")) return; S.active=null; S.toolsOpen=false; render(); window.scrollTo({top:0}); }
     else if(a==="tools"){ S.toolsOpen=!S.toolsOpen; render(); }
-    else if(a==="copy"){ const pin=allPins().find(p=>p.id===S.active); if(pin){ copyText(pin.prompt); track("copy_prompt",{id:pin.id,title:pin.title,where:"detail"}); toast(t().copiedToast); } }
+    else if(a==="copy"){ const pin=allPins().find(p=>p.id===S.active); if(pin){ copyText(pin.prompt); track("copy_prompt",{id:pin.id,title:pin.title,category:pin.category,where:"detail"}); toast(t().copiedToast); } }
     else if(a==="composer"){ S.composer=true; S.draft=blankDraft(); S.newTagOpen=false; S.newTagVal=""; render(); }
+    else if(a==="gencopy"){ if(S.gen.prompt){ copyText(S.gen.prompt); track("gen_copy",{}); toast(t().copiedToast); } }
+    else if(a==="gentools"){ if(S.gen.prompt){ S.gen.toolsOpen=!S.gen.toolsOpen; render(); } }
+    else if(a==="genreset"){ S.gen={busy:false,preview:"",prompt:"",error:"",toolsOpen:false}; render(); }
     else if(a==="composer-close"||a==="closecomposer"){ if(a==="closecomposer"&&e.target.closest(".modal")) return; S.composer=false; render(); }
     else if(a==="newtagOpen"){ S.newTagOpen=true; S.newTagVal=""; render(); const i=document.getElementById("pr-newtag"); if(i)i.focus(); }
     else if(a==="newtagAdd"){ confirmTag(); }
@@ -577,7 +635,7 @@
     if(e.target && e.target.id==="pr-newtag"){ if(e.key==="Enter"){ e.preventDefault(); confirmTag(); } else if(e.key==="Escape"){ S.newTagOpen=false; S.newTagVal=""; render(); } return; }
     if(e.key==="Escape"){ if(S.info){S.info=null;render();} else if(S.active){S.active=null;render();} else if(S.composer){S.composer=false;render();} else if(S.langOpen){S.langOpen=false;render();} }
     const card=e.target.closest&&e.target.closest("[data-open]");
-    if(card&&(e.key==="Enter"||e.key===" ")){ e.preventDefault(); S.active=card.dataset.open; S.toolsOpen=false; render(); }
+    if(card&&(e.key==="Enter"||e.key===" ")){ e.preventDefault(); const op=allPins().find(p=>p.id===card.dataset.open); if(op) track("open_pin",{id:op.id,title:op.title,category:op.category,from:S.active?"similar":"feed"}); S.active=card.dataset.open; S.toolsOpen=false; render(); }
   });
 
   document.addEventListener("input",(e)=>{
@@ -590,6 +648,11 @@
   document.addEventListener("change", async (e)=>{
     const inp=e.target; if(!inp.dataset || !inp.dataset.file) return;
     const file=inp.files&&inp.files[0]; if(!file) return;
+    if(inp.dataset.file==="genimg"){
+      try{ const data=await compress(file,768,0.8); S.gen.preview=data; S.gen.prompt=""; S.gen.error=""; render(); await generatePrompt(data); }
+      catch{ S.gen.error="failed"; render(); }
+      inp.value=""; return;
+    }
     try{ const data=await compress(file); S.draft[inp.dataset.file+"Data"]=data;
       if(inp.dataset.file==="after"){ const img=new Image(); img.onload=()=>{ const hw=img.naturalHeight/img.naturalWidth; let bk="4:5",bd=Infinity; for(const k of RATIOS){ const diff=Math.abs(RATIO[k]-hw); if(diff<bd){bd=diff;bk=k;} } S.draft.ratio=bk; render(); }; img.src=data; }
       render();
@@ -633,7 +696,7 @@
       } else { S.admin = load("pr_admin",false)===true; }
     }catch{ S.admin = load("pr_admin",false)===true; }
     if(S.gh.connected) S.admin=true;
-    try{ const r=await fetch("data/prompts.json",{cache:"no-cache"}); const j=r.ok?await r.json():[]; S.seed=normalize(Array.isArray(j)?j:(j.pins||[])); }
+    try{ const r=await fetch("data/prompts1.json",{cache:"no-cache"}); const j=r.ok?await r.json():[]; S.seed=normalize(Array.isArray(j)?j:(j.pins||[])); }
     catch{ S.seed=[]; if(location.protocol==="file:") S.fileWarn=true; }
     render();
   }

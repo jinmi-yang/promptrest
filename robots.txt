@@ -4,6 +4,7 @@
 
 User-agent: *
 Disallow: /data/
+Disallow: /api/
 Disallow: /images/
 
 # Block known AI-training / bulk scrapers entirely
